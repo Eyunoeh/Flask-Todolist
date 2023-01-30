@@ -1,0 +1,31 @@
+{% extends 'base.html'%}
+
+{% block head %}
+{% endblock%}
+
+{% block body %}
+<div class="content">
+  <h1 style="text-align: center">Update Task</h1>
+</div>
+<div class="form">
+    <form action="/update/{{ task.id }}" method="POST" onsubmit="return validateForm()">
+      <label for="content"></label><br>
+      <input type="text" name="content" id="content" value="{{ task.content }}" required>
+      <br>
+      <span id="error" style="color:red; display:none;">Invalid Input</span>
+      <br>
+      <input type="submit" value="Update">
+</form></div>
+
+<script>
+  function validateForm() {
+    var content = document.getElementById("content").value;
+    if (!content.trim()) {
+      document.getElementById("content").style.border = "1px solid red";
+      document.getElementById("error").style.display = "inline";
+      return false;
+    }
+    return true;
+  }
+</script>
+{% endblock%}
