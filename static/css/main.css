@@ -72,7 +72,7 @@ input[type="submit"] {
 }
 
 input[type="submit"]:hover {
-  background-color: #45a049; /* changes the background color of the button on hover */
+  background-color: #45a049;
 }
 link[rel="icon"] {
     border-radius: 50%;
